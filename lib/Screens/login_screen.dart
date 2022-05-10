@@ -35,7 +35,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: TextField(
-                        keyboardType: TextInputType.number,
+                        textInputAction: TextInputAction.next,
+                        keyboardType: TextInputType.text,
                         decoration: InputDecoration(
                             labelText: "নাম :"),
                       ),
@@ -100,20 +101,25 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(top: 40),
-                      child: Material(
-                        elevation: 3,
-                        color: Colors.transparent,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 5),
-                          child: SizedBox(
-                            height: 50,
-                            child: Container(
-                              width: 150,
-                              child: const Center(child: Text("লগইন",style: TextStyle(color: Colors.white),)),
-                              decoration: const BoxDecoration(
-                                color: Colors.lightBlueAccent,
-                                borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10))
-                              ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 5),
+                        child: SizedBox(
+                          height: 50,
+                          child: Container(
+                            width: 150,
+                            child: const Center(child: Text("লগইন",style: TextStyle(color: Colors.white))),
+                            decoration: const BoxDecoration(
+                              color: Colors.lightBlueAccent,
+                              borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10)),
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 5,
+                                  spreadRadius: 1,
+                                  color: Colors.blueGrey,
+                                  blurStyle:BlurStyle.inner,
+                                  offset: Offset(0.0, -1)
+                                )
+                              ]
                             ),
                           ),
                         ),
